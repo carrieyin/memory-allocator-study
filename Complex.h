@@ -11,6 +11,7 @@ using namespace std;
 
 class Complex {
 public:
+    void* operator new (size_t size);
     Complex(int ir, int im);
 
     int getIr() const;

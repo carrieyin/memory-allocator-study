@@ -2,6 +2,7 @@
 // Created by yindd on 2020/1/1.
 //
 
+#include <iostream>
 #include "Complex.h"
 
 
@@ -27,4 +28,10 @@ void Complex::setIm(int im) {
 ostream& operator<<(ostream& out, const Complex& com){
     out<<"["<<com.getIr()<<","<<com.getIm()<<"]"<<endl;
     return out;
+}
+
+void *Complex::operator new(size_t size) {
+    void * p = malloc(sizeof(Complex));
+    cout<<"P malloc"<<endl;
+    return p;
 }
