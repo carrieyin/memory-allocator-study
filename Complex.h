@@ -12,7 +12,8 @@ using namespace std;
 class Complex {
 public:
     void* operator new (size_t size);
-    Complex(int ir, int im);
+    void* operator new (size_t size, void* pVoid);
+    Complex(int ir = 0, int im = 0);
 
     int getIr() const;
 

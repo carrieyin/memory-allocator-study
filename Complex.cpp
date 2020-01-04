@@ -7,6 +7,7 @@
 
 
 Complex::Complex(int ir, int im) : ir(ir), im(im) {
+    cout<<"constructor this = "<< this<<endl;
 }
 
 int Complex::getIr() const {
@@ -34,4 +35,9 @@ void *Complex::operator new(size_t size) {
     void * p = malloc(sizeof(Complex));
     cout<<"P malloc"<<endl;
     return p;
+}
+
+void* Complex::operator new (size_t size, void* pVoid){
+    cout<<"operator new(size, void*)"<<endl;
+    return pVoid;
 }
