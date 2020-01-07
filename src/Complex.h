@@ -13,6 +13,8 @@ class Complex {
 public:
     void* operator new (size_t size);
     void* operator new (size_t size, void* pVoid);
+
+    void operator delete (void* p);
     Complex(int ir = 0, int im = 0);
 
     int getIr() const;

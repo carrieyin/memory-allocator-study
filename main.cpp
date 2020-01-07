@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Complex.h"
+#include "src/Complex.h"
 
 int main() {
     Complex com(3,5);
@@ -16,6 +16,13 @@ int main() {
         new (p3++)Complex (2, 5);
     }
 
+    delete [] p2;
+
+    //palcement new
+    Complex* p4 = (Complex*) malloc(sizeof(Complex));
+    new(p4)Complex(8, 8);
+    cout<<"p4:"<<*p4<<endl;
+    delete p4;
     //p->Complex::Complex(3,5); contructor无法直接调用
     return 0;
 }
