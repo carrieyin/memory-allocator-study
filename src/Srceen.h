@@ -8,7 +8,7 @@
 
 
 #include <cstddef>
-
+#include <stdio.h>
 class Screen {
 public:
     Screen(int ie):i(ie){};
@@ -20,12 +20,15 @@ private:
     //数据成员
     int i;
 
-private:
+public:
     //下一地址的指针
     Screen* next;
     //可用链表头指针
-    static Screen* free;
+    static Screen* pfree;
+    static int chunkSize;
 };
 
+Screen* Screen::pfree = NULL;
+int Screen::chunkSize = 30;
 
 #endif //MEMORY_ALLOCATOR_STUDY_SRCEEN_H
