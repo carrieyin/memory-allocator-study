@@ -9,9 +9,14 @@
 
 #include <cstddef>
 #include <stdio.h>
+#include <iostream>
+
+using  namespace std;
 class Screen {
 public:
-    Screen(int ie):i(ie){};
+    Screen(int ie):i(ie){
+        cout<<"constructor this:"<<this<<endl;
+    };
     int get(){return i;};
 
     void * operator new(size_t size);

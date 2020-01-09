@@ -7,24 +7,27 @@
 
 void *Screen::operator new(size_t size) {
     Screen* p;
-    if(!pfree){
+    if(!pfree)
+    {
         size_t sizeMalloc = chunkSize * size;
         //pfree = (Screen* )malloc(sizeMalloc);
         pfree = reinterpret_cast<Screen*>(new char[sizeMalloc]);
 
-        Screen* p = pfree;
-        while(p != NULL){
+        p = pfree;
+        while(p != &pfree[chunkSize - 1])
+        {
             p->next = p + 1;
             p = p->next;
         }
+        p = NULL;
     }
     p = pfree;
-    pfree = pfree->next；
+    pfree = pfree->next;
     return p;
 }
 
 void Screen::operator delete(void * pointer) {
-    Screen* p = reinterpret_cast<Screen*>(pointer);
+    Screen* p = static_cast<Screen*>(pointer);
     p->next = pfree;
     pfree = p;
 }
