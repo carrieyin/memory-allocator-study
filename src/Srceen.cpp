@@ -5,6 +5,10 @@
 #include <cstdlib>
 #include "Srceen.h"
 
+//注意静态成员变量定义必须放在cpp中否则会重定义
+Screen* Screen::pfree = NULL;
+int Screen::chunkSize = 30;
+
 void *Screen::operator new(size_t size) {
     Screen* p;
     if(!pfree)

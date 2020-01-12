@@ -33,7 +33,6 @@ public:
     static int chunkSize;
 };
 
-Screen* Screen::pfree = NULL;
-int Screen::chunkSize = 30;
+
 
 #endif //MEMORY_ALLOCATOR_STUDY_SRCEEN_H
