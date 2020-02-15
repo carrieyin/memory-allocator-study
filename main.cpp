@@ -1,6 +1,7 @@
 #include <iostream>
 #include "src/Complex.h"
 #include "src/Srceen.h"
+#include "ClassA.h"
 
 int main() {
     /*Complex com(3,5);
@@ -34,9 +35,10 @@ int main() {
     cout<<"ip:"<<ip<<endl;*/
 
    //测试screen operator new
-   for(int i = 0; i < 30; i++){
-       new Screen(i);
-   }
+	/*for (int i = 0; i < 30; i++) {
+		new Screen(i);
+	}*/
 
+	cout << sizeof(ClassA);
     return 0;
 }
