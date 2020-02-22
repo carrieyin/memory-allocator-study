@@ -56,5 +56,11 @@ int main() {
 	{
 		cout << p[i]->geta() << "," << p[i]->getb() << endl;
 	}
+
+	for (int i = 0; i < 4; i++)
+	{
+		delete p[i];
+	}
+
     return 0;
 }
