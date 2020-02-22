@@ -40,5 +40,21 @@ int main() {
 	}*/
 
 	cout << sizeof(ClassA);
+	size_t const N = 100;
+	ClassA* p[N];
+	for (int i = 0; i < 100; i++)
+	{
+		p[i] = new ClassA();
+	}
+		
+	p[0]->setab('A', 1000);
+	p[1]->setab('B', 1001);
+	p[2]->setab('C', 1002);
+	p[3]->setab('D', 1003);
+
+	for (int i = 0; i < 4; i++)
+	{
+		cout << p[i]->geta() << "," << p[i]->getb() << endl;
+	}
     return 0;
 }

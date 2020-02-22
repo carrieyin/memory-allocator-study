@@ -16,10 +16,34 @@ void * ClassA::operator new(size_t size)
 {
 	if (NULL == freelist)
 	{
+		freelist = (ClassA*) malloc(sizeof(ClassA) * ClassA::MEM_SIZE);
+		ClassA* pa = freelist;
 
+		for (int i = 0; i < MEM_SIZE; i++)
+		{
+			pa[i].next = &pa[i + 1];
+		}
+		pa->next = NULL;
+
+		return freelist;
 	}
 
-	return nullptr;
+	freelist = freelist->next;
+	return freelist;
+	
+}
+
+void ClassA::operator delete(void * deadobject, size_t size)
+{
+	if (deadobject = 0)
+	{
+		return;
+	}
+	ClassA* pobject = static_cast<ClassA*> (deadobject);
+	pobject->next = freelist;
+	freelist = pobject;
+
+	return ;
 }
 
 

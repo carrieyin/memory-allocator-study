@@ -11,35 +11,52 @@
 /****************************************************************************************/
 class ClassA
 {
-
 private:
 	struct  A
 	{
+		int b;
 		char a;	
 	};
 
 	union {
-		A a;
+		A ma;
 		ClassA* next;
 	};
-private:
-	
+
+public:
+	char geta() const
+	{
+		return ma.a;
+	}
+
+	void seta(char aa) {
+		ma.a = aa;
+	}
+
+	char getb() const
+	{
+		return ma.b;
+	}
+
+	void setb(int b) {
+		ma.b = b;
+	}
+
+	void setab(char aa, int bb) {
+		ma.a = aa;
+		ma.b = bb;
+	}
 	static void* operator new (size_t size);
+	static void operator delete(void* deadopbject, size_t size);
+private:
+
 	static int MEM_SIZE;
 	static ClassA* freelist;
 	
 public:
-	int aa;
-	int bb;
-	     int Get() const
-	    {
-	        return aa;
-	    }
-		 void Set(int val)
-		 {
-			 aa = val;
-		 }
+	
 	ClassA();
 	~ClassA();
 };
+
 
