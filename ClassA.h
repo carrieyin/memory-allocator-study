@@ -33,7 +33,7 @@ public:
 		ma.a = aa;
 	}
 
-	char getb() const
+	int getb() const
 	{
 		return ma.b;
 	}
