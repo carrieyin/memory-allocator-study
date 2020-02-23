@@ -2,6 +2,8 @@
 #include "src/Complex.h"
 #include "src/Srceen.h"
 #include "ClassA.h"
+#include "Foo.h"
+
 
 int main() {
     /*Complex com(3,5);
@@ -39,7 +41,7 @@ int main() {
 		new Screen(i);
 	}*/
 
-	cout << sizeof(ClassA);
+	/*cout << sizeof(ClassA);
 	size_t const N = 100;
 	ClassA* p[N];
 	for (int i = 0; i < 100; i++)
@@ -58,6 +60,17 @@ int main() {
 	}
 
 	for (int i = 0; i < 4; i++)
+	{
+		delete p[i];
+	}*/
+
+	Foo* p[100];
+	for (int i = 0; i < 20; i++) {
+		p[i] = new Foo(i);
+		cout << p[i] << endl;
+	}
+
+	for (int i = 0; i < 20; i++)
 	{
 		delete p[i];
 	}

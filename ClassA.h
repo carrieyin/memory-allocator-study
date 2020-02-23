@@ -54,7 +54,6 @@ private:
 	static ClassA* freelist;
 	
 public:
-	
 	ClassA();
 	~ClassA();
 };
