@@ -1,7 +1,5 @@
 #include "allocator.h"
 
-
-
 void * MyAllocator::allocate(size_t size)
 {
 	obj* p;

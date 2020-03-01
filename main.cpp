@@ -3,6 +3,8 @@
 #include "src/Srceen.h"
 #include "ClassA.h"
 #include "Foo.h"
+#include "ClassB.h"
+#include <vector>
 
 
 int main() {
@@ -64,7 +66,7 @@ int main() {
 		delete p[i];
 	}*/
 
-	Foo* p[100];
+	/*Foo* p[100];
 	for (int i = 0; i < 20; i++) {
 		p[i] = new Foo(i);
 		cout << p[i] << endl;
@@ -73,7 +75,33 @@ int main() {
 	for (int i = 0; i < 20; i++)
 	{
 		delete p[i];
+	}*/
+
+	cout << sizeof(ClassB);
+
+    
+
+	vector<int> vec;
+	vec.push_back(1);
+	vec.push_back(56);
+	/*for (int i:vec)
+	{
+		cout << i<<endl;
+	}*/
+
+	vector<int>::iterator iter = vec.begin();
+	for (;iter != vec.end(); iter++)
+	{
+		cout << *iter << endl;
 	}
 
-    return 0;
+	for (auto elem : vec) {
+		cout << elem << endl;
+	}
+
+	for (auto& elem : vec) {
+		elem *= 3;
+		cout << elem << endl;
+	}
+	return 0;
 }
