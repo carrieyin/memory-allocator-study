@@ -5,8 +5,17 @@
 #include "Foo.h"
 #include "ClassB.h"
 #include <vector>
+#include <array>
 
-
+int compareint(const void* a, const void* b) {
+	if (*(int*)a > *(int*)b) {
+		return 1;
+	}
+	else
+	{
+		return -1;
+	}
+}
 int main() {
     /*Complex com(3,5);
     cout<<com;
@@ -102,6 +111,13 @@ int main() {
 	for (auto& elem : vec) {
 		elem *= 3;
 		cout << elem << endl;
+	}
+
+	//std::array<int, 5> app = {56, 78,12,1, 9};
+	int app[5] = { 56, 78,12,1, 9 };
+	qsort(app, 5, sizeof(int),compareint );
+	for (int i : app) {
+		cout << i << endl;
 	}
 	return 0;
 }
